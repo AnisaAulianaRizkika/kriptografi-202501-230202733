@@ -40,30 +40,15 @@ Kelas: 5IKKA
 ---
 
 ## 5. Source Code
-(Salin kode program utama yang dibuat atau dimodifikasi.  
-Gunakan blok kode:
-
-```python
-# contoh potongan kode
-def encrypt(text, key):
-    return ...
-```
-)
+def unicity_distance_bits(key_entropy_bits: float, redundancy_bits_per_char: float) -> float:
+    if redundancy_bits_per_char <= 0:
+        raise ValueError("redundancy_bits_per_char harus > 0")
+    return key_entropy_bits / redundancy_bits_per_char
 
 ---
 
 ## 6. Hasil dan Pembahasan
-(- Lampirkan screenshot hasil eksekusi program (taruh di folder `screenshots/`).  
-- Berikan tabel atau ringkasan hasil uji jika diperlukan.  
-- Jelaskan apakah hasil sesuai ekspektasi.  
-- Bahas error (jika ada) dan solusinya. 
-
-Hasil eksekusi program Caesar Cipher:
-
-![Hasil Eksekusi](screenshots/output.png)
-![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/output.png)
-)
+Ringkasan hasil uji menunjukkan bahwa nilai unicity distance meningkat seiring bertambahnya entropy kunci dan menurun ketika redundansi pesan semakin besar. Pada kunci dengan entropy tinggi (misalnya 128–256 bit), dibutuhkan jumlah ciphertext yang jauh lebih banyak untuk dapat menentukan kunci secara unik, sedangkan pada kunci ber-entropy rendah atau pesan dengan redundansi tinggi, jumlah ciphertext yang diperlukan menjadi lebih sedikit. Hal ini membuktikan bahwa penggunaan kunci yang kuat serta pengurangan redundansi data sangat penting untuk meningkatkan ketahanan cipher terhadap serangan analisis dan brute force.
 
 ---
 
