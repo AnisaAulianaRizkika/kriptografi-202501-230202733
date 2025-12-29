@@ -12,7 +12,7 @@ def caesar_decrypt(ciphertext, key):
     return caesar_encrypt(ciphertext, -key)
 
 # Contoh uji
-msg = "CLASSIC CIPHER"
+msg = "Anisa Auliana Rizkika"
 key = 3
 enc = caesar_encrypt(msg, key)
 dec = caesar_decrypt(enc, key)
@@ -88,3 +88,4 @@ dec = transpose_decrypt(enc, key=5)
 print("Plaintext :", msg)
 print("Ciphertext:", enc)
 print("Decrypted :", dec)
+
